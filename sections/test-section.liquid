@@ -1,0 +1,26 @@
+<!-- title-section.liquid -->
+
+<div class="custom-heading">
+    <h2>{{ section.settings.title }}</h2>
+</div>
+
+{% schema %}
+{
+  "name": "title-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Default Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom heading",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}
