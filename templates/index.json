@@ -332,10 +332,10 @@
     "test_section_mypqge": {
       "type": "test-section",
       "custom_css": [
-        "h2 {max-width: fit-content;margin: 0 auto;}"
+        "h2 {max-width: fit-content; margin: 0 auto;}"
       ],
       "settings": {
-        "title": "Thank you for visiting!"
+        "title": "Use Code \"first20\" for 20% off!!"
       }
     }
   },
