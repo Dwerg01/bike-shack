@@ -16,23 +16,18 @@ businessCheckBox.addEventListener('change', function () {
     }
 });
 
-
 contactReason.addEventListener('change', function () {
     
-    console.log(contactReason.value)
+    productBox.classList.add('hidden');
+    orderBox.classList.add('hidden');
     
     if(contactReason.value === "product") {
         productBox.classList.remove('hidden')
-        orderBox.classList.add('hidden')
     } 
     if(contactReason.value === "order") {
-        productBox.classList.add('hidden')
         orderBox.classList.remove('hidden')
     } 
-    if(contactReason.value !== "order" && contactReason.value !== "product") {
-        productBox.classList.add('hidden')
-        orderBox.classList.add('hidden')
-    }
+    
 
 
 })
