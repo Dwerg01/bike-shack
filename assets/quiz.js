@@ -19,22 +19,23 @@ function displayQuestion(index) {
   
   let questionHTML = 
   `    
-  <h2>${currentQuestion.text}</h2>
+  <h2>${index + 1}) ${currentQuestion.text}</h2>
   <div class="label-container">
   ${currentQuestion.options.map(option => `
   <input type="radio" id="${option.value}" name="${currentQuestion.name}" value="${option.value}" ${answers[currentQuestion.name] == option.value ? "checked" : ""}>
   <label for="${option.value}">
     <div class="img-wrap">
-      <img src="${option.img}">
+      <img src=${option.img}>
     </div>
     <span>${option.label}</span>
   </label>`
 
   ).join('')}
   </div>
-  `;
+  `
 
-  quiz_form.innerHTML = questionHTML;
+  quiz_form.innerHTML = questionHTML
+
 }
 
 
