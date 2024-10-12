@@ -5,7 +5,6 @@ var flkty = new Flickity( elem, {
   cellAlign: 'left',
   pageDots: false,
   autoPlay: false,
-  prevNextButtons: false,
   contain: true,
   wrapAround: true
 });
