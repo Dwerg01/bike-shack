@@ -1,9 +1,18 @@
 // initialize slideshow
+var elem = document.querySelector('.main-carousel');
+var flkty = new Flickity( elem, {
+  // options
+  cellAlign: 'left',
+  pageDots: false,
+  autoPlay: false,
+  prevNextButtons: false,
+  contain: true,
+  wrapAround: true
+});
 
-// config:
-// assume there is just one single slider on the page
-// navigation dots should be disabled
-// no autoplay
-// infinite loop
-// the slides or cells should be aligned to the left side on initialization.
-// pauseAutoPlayOnHover: false
+// element argument can be a selector string
+//   for an individual element
+var flkty = new Flickity( '.main-carousel', {
+    
+});
+

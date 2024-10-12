@@ -40,53 +40,52 @@
      
 
       {%comment%} hardcoded slides for testing {%endcomment%}
-      {% for block in section.blocks %}
-        <div class="testimonial-slide">
-          <div class="content-container">
-            <div class="multicolumn-card__info">
-              <h3 class="inline-richtext">{{ block.settings.title }}</h3>
-              <div class="rte">
-              
-               
-                {{  block.settings.text }}
-               
-              
+      <div class="main-carousel">
+        {% for block in section.blocks %}
+          <div class="testimonial-slide carousel-cell">
+            <div class="content-container">
+              <div class="multicolumn-card__info">
+                <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+                <div class="rte">
+        
+        
+                  {{  block.settings.text }}
+        
+        
+                </div>
               </div>
-            </div>
-            <div class="profile-block">
-              <div class="profile-img">
-
-                <img src="{{ block.settings.image | image_url: "master" }}" alt="profile image of reviewer, {{ block.settings.name }}"
-                  srcset="{{ block.settings.image | image_url }}" width="48"
-                  height="48" loading="lazy" class="profile-image">
-
-              </div>
-              <div class="title-wrap">
-                <p class="name">
-                  {{  block.settings.name }}
-                </p>
-                <div class="star-rating">
-                  {% assign stars = block.settings.star_rating %}  
-                  {% assign startest = block.settings.star_rating | floor %}  
-                  
-                  {% for i in (1..startest) %}
-                    {% include 'icon-star-full' %}
-                  {% endfor %}
-                
-                  {% if stars != startest %}
-                    {% include 'icon-star-half' %}
-                  {% endif %}
-                  {% comment %}
-                    {% endcomment %}
-
+              <div class="profile-block">
+                <div class="profile-img">
+                  <img src="{{ block.settings.image | image_url: "master" }}" alt="profile image of reviewer, {{ block.settings.name }}"
+                    srcset="{{ block.settings.image | image_url }}" width="48"
+                    height="48" loading="lazy" class="profile-image">
+                </div>
+                <div class="title-wrap">
+                  <p class="name">
+                    {{  block.settings.name }}
+                  </p>
+                  <div class="star-rating">
+                    {% assign stars = block.settings.star_rating %}
+                    {% assign startest = block.settings.star_rating | floor %}
+        
+                    {% for i in (1..startest) %}
+                      {% include 'icon-star-full' %}
+                    {% endfor %}
+        
+                    {% if stars != startest %}
+                      {% include 'icon-star-half' %}
+                    {% endif %}
+                    {% comment %}
+                      {% endcomment %}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
 
-      {%comment%} END hardcoded slides for testing {%endcomment%}
+ 
 
     </div>
     
