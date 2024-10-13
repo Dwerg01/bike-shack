@@ -1,17 +1,19 @@
 // initialize slideshow
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
-  // options
-  cellAlign: 'left',
-  pageDots: false,
-  autoPlay: false,
-  contain: true,
-  wrapAround: true
-});
+var sliders = document.querySelectorAll('.main-carousel');
 
-// element argument can be a selector string
-//   for an individual element
-var flkty = new Flickity( '.main-carousel', {
-    
-});
+sliders.forEach((elem) => {
+    let autoPl = parseInt(elem.parentElement.dataset.autoplay)
+
+
+
+    new Flickity( elem, {
+        // options
+        cellAlign: 'left',
+        pageDots: false,
+        autoPlay: autoPl,
+        contain: true,
+        wrapAround: true
+    });
+})
+
 
