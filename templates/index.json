@@ -501,11 +501,19 @@
       "settings": {
         "title": "Use Code \"first20\" for 20% off!!"
       }
+    },
+    "countdown_fJzTRX": {
+      "type": "countdown",
+      "settings": {
+        "text": "Spring Sale! Save up to 20%",
+        "final_date": "May 25, 2026 16:37:52 EST"
+      }
     }
   },
   "order": [
     "image-with-text",
     "featured_collection",
+    "countdown_fJzTRX",
     "image_with_text_7GrjRn",
     "image_with_text_e7KBW4",
     "rich_text_tEbMzP",

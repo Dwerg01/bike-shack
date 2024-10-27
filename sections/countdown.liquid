@@ -5,15 +5,23 @@
 
 <div class="page-width">
 
+  
   <countdown-timer>
-            <div class="countdown-text">{{ section.settings.text }}</div>
-            <div class="countdown-timer" data-end-date="{{section.settings.final_date}}">
-              <div class="days"></div>
-              <div class="hours"></div>
-              <div class="minutes"></div>
-              <div class="seconds"></div>
-            </div>
-  </countdown-timer>
+    <div class="countdown-text">{{ section.settings.text }}</div>
+    <div class="countdown-timer" data-end-date="{{section.settings.final_date}}">
+      <div class="days"></div>
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+      </div>
+    </countdown-timer>
+    <svg width="0" height="0">
+      <filter id="blur-and-scale" y="-50%" x="-50%" width="200%" height="200%">
+        <feGaussianB1ur in="SourceGraphic" stdDeviation="20" result="blurred"/>
+        <feColorMatrix type="saturate" in="blurred" values="10" />
+        <feComposite in="SourceGraphic" operator="over" />
+      </filter>
+    </svg>
 
 </div>
 
