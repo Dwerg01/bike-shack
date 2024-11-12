@@ -16,6 +16,12 @@
           "type": "title",
           "settings": {}
         },
+        "custom_liquid_8zciwM": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% assign variant = product.selected_or_first_available_variant %}"
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -75,16 +81,11 @@
             "icon_3": "stopwatch",
             "heading_3": "Quick assembly"
           }
-        },
-        "custom_liquid_8zciwM": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{{ product.name }}"
-          }
         }
       },
       "block_order": [
         "title",
+        "custom_liquid_8zciwM",
         "vendor",
         "product-rating",
         "price",
@@ -94,8 +95,7 @@
         "description",
         "share",
         "meta_information_Mnmc7J",
-        "icon_with_text_VrMPVY",
-        "custom_liquid_8zciwM"
+        "icon_with_text_VrMPVY"
       ],
       "settings": {
         "enable_sticky_info": true,
