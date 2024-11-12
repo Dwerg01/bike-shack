@@ -19,7 +19,7 @@
         "custom_liquid_8zciwM": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% assign variant = product.selected_or_first_available_variant %}"
+            "custom_liquid": "{% assign variant = product.selected_or_first_available_variant %}\n<p>{{ variant.metafields.custom.specifications }}</p>"
           }
         },
         "vendor": {
