@@ -19,7 +19,7 @@
         "custom_liquid_8zciwM": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% assign metaobject_id = variant.metafields.custom.specifications %}\n\n{% if metaobject_id %}\n  {% assign metaobject = metaobject[metaobject_id] %}\n\n  {% if metaobject %}\n    <h2>metaobject.top_speed</h2>\n  {% endif %}\n{% endif %}"
+            "custom_liquid": "{% assign metaobject_id = variant.metafields.custom.specifications %}\n\n<p>{{ metaobject_id }}</p>"
           }
         },
         "vendor": {
