@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         prodName.classList.add('hidden');
         orderNumDiv.classList.add('hidden');
+        
         if (reasonForContact.value == "product") 
             {prodName.classList.remove('hidden')} 
         else if (reasonForContact.value == "order") 
