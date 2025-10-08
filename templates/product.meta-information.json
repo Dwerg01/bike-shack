@@ -16,6 +16,12 @@
           "type": "title",
           "settings": {}
         },
+        "custom_liquid_8zciwM": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% assign metaobject_id = variant.metafields.custom.specifications %}\n\n<p>{{ metaobject_id }}</p>"
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -79,6 +85,7 @@
       },
       "block_order": [
         "title",
+        "custom_liquid_8zciwM",
         "vendor",
         "product-rating",
         "price",
@@ -111,21 +118,15 @@
       "blocks": {
         "image_np6cpE": {
           "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/collage_1.jpg"
-          }
+          "settings": {}
         },
         "image_jXzY8e": {
           "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/collage_2.jpg"
-          }
+          "settings": {}
         },
         "image_Ac9GfX": {
           "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/collage_3.jpg"
-          }
+          "settings": {}
         }
       },
       "block_order": [

@@ -1,9 +1,19 @@
 // initialize slideshow
+var sliders = document.querySelectorAll('.main-carousel');
 
-// config:
-// assume there is just one single slider on the page
-// navigation dots should be disabled
-// no autoplay
-// infinite loop
-// the slides or cells should be aligned to the left side on initialization.
-// pauseAutoPlayOnHover: false
+sliders.forEach((elem) => {
+    let autoPl = parseInt(elem.parentElement.dataset.autoplay)
+
+
+
+    new Flickity( elem, {
+        // options
+        cellAlign: 'left',
+        pageDots: false,
+        autoPlay: autoPl,
+        contain: true,
+        wrapAround: true
+    });
+})
+
+

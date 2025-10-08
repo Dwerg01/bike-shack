@@ -1107,6 +1107,7 @@ class SlideshowComponent extends SliderComponent {
 
 customElements.define("slideshow-component", SlideshowComponent);
 
+
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
@@ -1121,16 +1122,22 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
-
+    
     if (!this.currentVariant) {
       this.toggleAddButton(true, "", true);
       this.setUnavailable();
+      // TODO: log out variable information
     } else {
       this.updateMedia();
       this.updateURL();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+      const variantChangeEvent = new CustomEvent("afterVariantChange", {
+      bubbles: true,
+        detail: {newVariant: this.currentVariant}
+      })
+      this.dispatchEvent(variantChangeEvent)
     }
   }
 

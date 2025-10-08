@@ -2,35 +2,34 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+const businessCheckBox = document.getElementById('businessAccount');
+const companyInfoInput = document.getElementById('companyInfo');
+const contactReason = document.querySelector("#contactReason");
+const productBox = document.getElementById("productNameField");
+const orderBox = document.getElementById("orderNumberField");
 
-    const busAcc = document.getElementById('businessAccount');
-    const coInfo = document.getElementById('companyInfo');
-
-    const reasonForContact = document.querySelector('#contactReason');
-    const prodName = document.querySelector('#productNameField');
-    const orderNumDiv = document.querySelector('#orderNumberField');
-
-
-    reasonForContact.addEventListener('change', function() {
-        
-        prodName.classList.add('hidden');
-        orderNumDiv.classList.add('hidden');
-        
-        if (reasonForContact.value == "product") 
-            {prodName.classList.remove('hidden')} 
-        else if (reasonForContact.value == "order") 
-            {(orderNumDiv.classList.remove('hidden'))} 
-
-    })
-
-    busAcc.addEventListener('change', function() {
-
-        busAcc.checked ? coInfo.classList.remove('hidden') : coInfo.classList.add('hidden');
-    })
-
-
-
-
-
-
+businessCheckBox.addEventListener('change', function () {
+    if (businessCheckBox.checked) {
+        companyInfoInput.classList.remove('hidden')
+    } else {
+        companyInfoInput.classList.add('hidden')
+    }
 });
+
+contactReason.addEventListener('change', function () {
+    
+    productBox.classList.add('hidden');
+    orderBox.classList.add('hidden');
+    
+    if(contactReason.value === "product") {
+        productBox.classList.remove('hidden')
+    } 
+    if(contactReason.value === "order") {
+        orderBox.classList.remove('hidden')
+    } 
+    
+
+
+})
+
+})

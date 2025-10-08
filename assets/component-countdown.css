@@ -12,7 +12,7 @@
 
 .countdown-text {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2.5em;
   margin-bottom: 10px;
   text-transform: uppercase;
   margin-right: 10px;
@@ -20,7 +20,7 @@
 }
 
 .countdown-timer {
-  font-size: 1.5em;
+  font-size: 2.5em;
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -37,7 +37,25 @@
 .countdown-timer .minutes,
 .countdown-timer .seconds {
   color: rgb(var(--color-button));
+  -moz-text-stroke: 0.75px #44dddd;
+  -webkit-text-stroke: 0.75px #44dddd;
 }
+.countdown-timer .days:after,
+.countdown-timer .hours:after,
+.countdown-timer .minutes:after,
+.countdown-timer .seconds:after {
+  /* content: "";
+  background: inherit;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform:scale(1.4);
+  filter: url(#blur-and-scale); */
+}
+
+
+
 
 countdown-timer {
   display: flex;
