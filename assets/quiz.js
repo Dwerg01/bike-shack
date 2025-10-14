@@ -34,7 +34,7 @@ function displayQuestion(index) {
   </div>
   `
 
-  quiz_form.innerHTML = questionHTML
+  quiz_form.innerHTML = questionHTML;
 
 }
 

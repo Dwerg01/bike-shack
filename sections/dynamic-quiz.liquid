@@ -1,0 +1,96 @@
+<div class="quiz page-width">
+  {%- unless section.settings.quiz_title == blank -%}
+    <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+      <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.quiz_title }}
+      </h2>
+      {%- if section.settings.button_label != blank and show_mobile_slider -%}
+        <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
+          {{- section.settings.button_label | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+  {%- endunless -%}
+
+  <form id="quizForm">
+    {% for block in section.blocks %}
+      <div class="quiz-question" id="question-{{ forloop.index }}">
+        <h3>{{ block.settings.question_text }}</h3>
+
+        {% assign options = block.settings.answer_options | split: ',' %}
+        {% assign images = block.settings.image_options | split: ',' %}
+        <div class="quiz-options">
+          {% for option in options %}
+            {% assign trimmed_option = option | strip %}
+            <img src="{{ block.settings.image_options | img }}" style="display: block;">
+            <label class="quiz-option">
+              <input
+                type="radio"
+                name="question_{{ block.id }}"
+                value="{{ trimmed_option }}">
+              <span>{{ trimmed_option }}</span>
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </form>
+  <div id="nav-buttons">
+
+    <button id="prev-button" class="button previous-btn">← Previous</button>
+    <button id="next-button" class="button next-btn">Next →</button>
+
+    <button
+      id="finish-button"
+      class="button next-btn"
+      style="display:none">Submit</button>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Quiz Builder",
+    "settings": [
+      {
+        "type": "text",
+        "id": "quiz_title",
+        "label": "Quiz Title",
+        "default": "Find Your Perfect Match"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "question",
+        "name": "Quiz Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question_text",
+            "label": "Question Text",
+            "default": "What do you prefer?"
+          },
+          {
+            "type": "textarea",
+            "id": "answer_options",
+            "label": "Answer Options (comma separated)",
+            "default": "Option 1, Option 2, Option 3"
+          },
+          {
+            "type": "textarea",
+            "id": "image_options",
+            "label": "Image Options (comma separated)",
+            "default": "Option 1, Option 2, Option 3"
+          },
+        ]
+      }
+    ],
+    "max_blocks": 6,
+    "presets": [
+      {
+        "name": "Quiz Builder",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
